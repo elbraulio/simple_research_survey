@@ -6,7 +6,7 @@
 </head>
 <body>
 <p>
-    <a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&checkerrorpages=yes&useragent=Validator.nu%2FLV+http%3A%2F%2Fvalidator.w3.org%2Fservices&acceptlanguage=en&doc=http%3A%2F%2Fsurvey.elbraulio.com%2F">
+    <a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&checkerrorpages=yes&useragent=Validator.nu%2FLV+http%3A%2F%2Fvalidator.w3.org%2Fservices&acceptlanguage=en&doc=http%3A%2F%2Fsurvey.elbraulio.com%2F">
         <img src="assets/img/w3-logo-2.png" alt="w3 validation"/>
     </a>
 </p>
