@@ -6,9 +6,16 @@
 </head>
 <body>
 <p>
-    <a href="https://validator.w3.org/check?uri=survey.elbraulio.com"><img
-            src="http://www.w3.org/Icons/valid-xhtml10"
-            alt="" height="31" width="88"/></a>
+    <a
+            href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&
+            showimagereport=yes&checkerrorpages=yes&useragent=Validator.nu%2FL
+            V+http%3A%2F%2Fvalidator.w3.org%2Fservices&acceptlanguage=en&doc=
+            http%3A%2F%2Fsurvey.elbraulio.com%2F">
+        <img
+                src="assets/img/w3-logo-2.png"
+                alt="w3 validation"/>
+    </a>
+<div>Icons made by <a href="https://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
 </p>
 </body>
 </html>
