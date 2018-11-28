@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="shortcut icon" type="image/png" href="assets/img/survey.png"/>
     <title>Survey</title>
 </head>
 <body>
