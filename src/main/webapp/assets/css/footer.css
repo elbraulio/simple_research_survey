@@ -1,0 +1,26 @@
+.footer {
+    background: aliceblue;
+    border: 1px solid blue;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    bottom: 0;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+.credits {
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+    font-size: small;
+}
+
+.img-center {
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
