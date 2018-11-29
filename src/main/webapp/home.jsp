@@ -8,19 +8,45 @@
     <title>Survey</title>
 </head>
 <body>
-<h1 class="description">Ros Answerer System Recommendation</h1>
-<div class="description">
+<h1>Run algorithm Dijkstra and A star</h1>
+<div class="q-content">
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel
-        velit
-        id diam pulvinar ultricies in ut justo. Nulla posuere, felis vitae
-        ornare semper, odio metus vehicula magna, at egestas arcu lectus eget
-        ex. Sed vulputate nisl ac tempus eleifend. Suspendisse at elit quis ante
-        ultricies gravida. Vestibulum bibendum lorem sit amet felis dictum, ut
-        ullamcorper arcu placerat.
+        I would like to know if someone can help me by indicating how the launch
+        file is built in order to execute the Dijkstra and A starr algorithms
+        available in ROS, since the page only brings the parameters and I am new
+        to this.
     </p>
 </div>
-<h2>2 minutes survey</h2>
+<h2>1 minute survey</h2>
+<div class="question">
+    <p>Do you have enough knowledge to answer this question?</p>
+    <input name="q1" type="radio"/> Yes <br>
+    <input name="q1" type="radio"/> No <br>
+</div>
+<div class="question">
+    <p>Would you be willing to answer the question?</p>
+    <input name="q2" type="radio"/> Yes <br>
+    <input name="q2" type="radio"/> No <br>
+</div>
+<div class="question">
+    <p>
+        This survey was automatically sent according to your profile,
+        collaborating with ROS in Github and ROS Answers. From 1 to 4, where 1
+        is very bad and 4 is excellent, how accurate do you think our prediction
+        was?
+    </p>
+    <input name="q3" type="radio"/> 1 <br>
+    <input name="q3" type="radio"/> 2 <br>
+    <input name="q3" type="radio"/> 3 <br>
+    <input name="q3" type="radio"/> 4 <br>
+</div>
+<div class="question">
+    <p>Please give us feedback</p>
+    <textarea rows="3"></textarea>
+</div>
+<div class="submit-btn">
+    <button type="button" onclick="x()">Submit</button>
+</div>
 <div class="footer">
     <div class="center">
         <a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&checkerrorpages=yes&useragent=Validator.nu%2FLV+http%3A%2F%2Fvalidator.w3.org%2Fservices&acceptlanguage=en&doc=http%3A%2F%2Fsurvey.elbraulio.com%2F">
@@ -42,5 +68,10 @@
             BY</a>
     </div>
 </div>
+<script>
+    function x() {
+        window.open("http://elbraulio.com", "_self");
+    }
+</script>
 </body>
 </html>

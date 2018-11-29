@@ -2,6 +2,32 @@ html * {
     font-family: Courier, monospace;
 }
 
+.q-content {
+    width: 50%;
+    margin: auto;
+}
+
 h1, h2 {
     text-align: center;
 }
+
+.question {
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+}
+
+textarea {
+    width: 100%;
+    font-size: medium;
+}
+
+.submit-btn {
+    text-align: center;
+    padding: 10px;
+}
+
+button {
+    font-size: x-large;
+}
+
