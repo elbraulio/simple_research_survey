@@ -35,12 +35,12 @@ button {
 @media only screen
 and (max-device-width: 812px) {
     .q-content {
-        width: 100%;
+        width: 80%;
         margin: auto;
     }
 
     .question {
-        width: 100%;
+        width: 80%;
         margin: auto;
         padding: 10px;
     }
