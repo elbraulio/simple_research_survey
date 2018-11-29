@@ -3,8 +3,9 @@
     border: 1px solid blue;
     width: 100%;
     margin: auto;
-    position: relative;
+    position: fixed;
     bottom: 0;
+    left: 0;
 }
 
 .center {
