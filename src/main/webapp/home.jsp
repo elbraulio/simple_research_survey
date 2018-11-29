@@ -20,13 +20,13 @@
 <h2>1 minute survey</h2>
 <div class="question">
     <p>Do you have enough knowledge to answer this question?</p>
-    <input name="q1" type="radio"/> Yes <br>
-    <input name="q1" type="radio"/> No <br>
+    <input name="q1" type="radio"/> <label>Yes</label> <br>
+    <input name="q1" type="radio"/> <label>No</label> <br>
 </div>
 <div class="question">
     <p>Would you be willing to answer the question?</p>
-    <input name="q2" type="radio"/> Yes <br>
-    <input name="q2" type="radio"/> No <br>
+    <input name="q2" type="radio"/> <label>Yes</label> <br>
+    <input name="q2" type="radio"/> <label>No</label> <br>
 </div>
 <div class="question">
     <p>
@@ -35,10 +35,10 @@
         is very bad and 4 is excellent, how accurate do you think our prediction
         was?
     </p>
-    <input name="q3" type="radio"/> 1 <br>
-    <input name="q3" type="radio"/> 2 <br>
-    <input name="q3" type="radio"/> 3 <br>
-    <input name="q3" type="radio"/> 4 <br>
+    <input name="q3" type="radio"/> <label>1</label> <br>
+    <input name="q3" type="radio"/> <label>2</label> <br>
+    <input name="q3" type="radio"/> <label>3</label> <br>
+    <input name="q3" type="radio"/> <label>4</label> <br>
 </div>
 <div class="question">
     <p>Please give us feedback</p>

@@ -20,6 +20,7 @@ h1, h2 {
 textarea {
     width: 100%;
     font-size: medium;
+    background: beige;
 }
 
 .submit-btn {
@@ -29,5 +30,23 @@ textarea {
 
 button {
     font-size: x-large;
+}
+
+@media only screen
+and (max-device-width: 812px) {
+    .q-content {
+        width: 100%;
+        margin: auto;
+    }
+
+    .question {
+        width: 100%;
+        margin: auto;
+        padding: 10px;
+    }
+
+    label {
+        font-size: xx-large;
+    }
 }
 
