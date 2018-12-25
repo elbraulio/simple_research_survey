@@ -8,7 +8,7 @@
     <title>Survey</title>
 </head>
 <body>
-<h1>Run algorithm Dijkstra and A star</h1>
+<a href="#"><h1>Run algorithm Dijkstra and A star</h1></a>
 <div class="q-content">
     <p>
         I would like to know if someone can help me by indicating how the launch
@@ -18,22 +18,25 @@
     </p>
 </div>
 <h2>1 minute survey</h2>
+<p class="center">(*) : answer required</p>
 <div class="question">
-    <p>Do you have enough knowledge to answer this question?</p>
+    <p>Given the topic and question above. Do you have knowledge about
+        the content of the question? <strong>(*)</strong></p>
     <input name="q1" type="radio"/> <label>Yes</label> <br>
     <input name="q1" type="radio"/> <label>No</label> <br>
 </div>
 <div class="question">
-    <p>Would you be willing to answer the question?</p>
+    <p>Would you be willing to answer the question? <strong>(*)</strong></p>
     <input name="q2" type="radio"/> <label>Yes</label> <br>
     <input name="q2" type="radio"/> <label>No</label> <br>
 </div>
 <div class="question">
     <p>
-        This survey was automatically sent according to your profile,
+        This survey was sent according to your profile,
         collaborating with ROS in Github and ROS Answers. From 1 to 4, where 1
         is very bad and 4 is excellent, how accurate do you think our prediction
-        was?
+        was about your knowledge to answer the question above? <strong>(*)
+    </strong>
     </p>
     <input name="q3" type="radio"/> <label>1</label> <br>
     <input name="q3" type="radio"/> <label>2</label> <br>
@@ -41,7 +44,8 @@
     <input name="q3" type="radio"/> <label>4</label> <br>
 </div>
 <div class="question">
-    <p>Please give us feedback</p>
+    <p>Please give us feedback about why you can answer or not the question
+        above</p>
     <textarea rows="3"></textarea>
 </div>
 <br>
