@@ -15,6 +15,32 @@ $ sqlite3 survey.db
 sqlite> .read {PATH_MODEL}/model
 ```
 
+## config properties
+
+in the `resources` folder you can customize this configurations:
+
+```properties
+# job schedule to check new survey request
+job.schedule=  0 0/5 0 ? * * *
+
+# path to the sqlite db that has the information for survey
+sqlite.path=
+
+# path to sqlite v1.2.db that has the rosgh information
+rosgh.db.path=
+
+# mail configuration
+user=noreply.rosgh.survey@gmail.com
+pass=...
+smtp.ssl.trust=*
+smtp.host=smtp.gmail.com
+smtp.port=587
+smtp.auth=true
+smtp.starttls.enable=true
+```
+
+Also __you must define__ the log output in the `log4j.properties` file in resources.
+
 ## deploy a war 
 
 ```bash
@@ -25,13 +51,13 @@ then deploy the `war` in your server. For instance if you are using [Tomcat](htt
 
 # How it works
 
-There is a __job__ that run every 5 minutes. It checks if exist a survey request to send a mail survey. The only thing you have to do to make a survey is to follow this guide.
+There is a __job__ that run every 5 minutes. It checks if exist a survey request to send a mail survey. The only thing you have to do to make a survey is to follow 3 steps.
 
 ## create a survey
 
 1. Add all the aspirants to every ROS question  you have got from your Algorithm to __Aspirant__ table. Including `ros_user_id` and `ros_question_id` (from the db included in resources).
 
-2. Add the __ros_user_id__ (from the db included in resources) to the __survey__ table. 
+2. Add the __ros_user_id__ (from the db included in resources) to the __survey__ table. When the mail is sent this record is removed. 
 
 3. Wait to the __job__ to take your survey (job runs every 5 minutes remenber).
 
