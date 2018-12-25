@@ -15,8 +15,6 @@ $ sqlite3 survey.db
 sqlite> .read {PATH_MODEL}/model
 ```
 
-
-
 ## deploy a war 
 
 ```bash
@@ -24,3 +22,24 @@ $ mvn package
 ```
 
 then deploy the `war` in your server. For instance if you are using [Tomcat](https://tomcat.apache.org) you can do it by leaving the war in your tomcat's `webapp` folder.
+
+# How it works
+
+There is a __job__ that run every 5 minutes. It checks if exist a survey request to send a mail survey. The only thing you have to do to make a survey is to follow this guide.
+
+## create a survey
+
+1. Add all the aspirants to every ROS question  you have got from your Algorithm to __Aspirant__ table. Including `ros_user_id` and `ros_question_id` (from the db included in resources).
+
+2. Add the __ros_user_id__ (from the db included in resources) to the __survey__ table. 
+
+3. Wait to the __job__ to take your survey (job runs every 5 minutes remenber).
+
+## check results
+
+You can check results in the __answers__ table, that's all. 
+
+# Disclaimer
+
+The source does not have a mail for each user, so be aware of using users that have mails.
+
