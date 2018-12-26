@@ -1,7 +1,19 @@
-Question-Answers sites like ROS Answers have grown in popularity and importance, this is why to find the accurate person or expert to answer a question has a big impact not only in these platforms itself but in all the industries that benefit of those sites as well. Currently, the are different researches about algorithims to recommend experts to answers questions. So we are surveying ROS Answers users to validate some algorithms that recommend users to answers ROS Answer's questions.
-
-Please participate in our survey, available at {survey-link}. We anticipate it requiring 5 minutes (max) of your time. Our detailed consent form is available at {survey-description-link}
-
+Question-Answers sites like ROS Answers have grown in popularity and importance,
+ this is why to find the accurate person or expert to answer a question has a
+ big impact not only in these platforms but in all the industries that
+  benefit of those sites as well. Currently, the are different researches about
+  algorithms to recommend experts to answers questions. So we are surveying ROS
+  Answers users to validate some algorithms that recommend users to answers ROS
+  Answer's questions.
+<br>
+<br>
+Please participate in our survey, available at <a href="{survey-link}">
+{survey-link}</a>. We anticipate it requiring 5 minutes (max) of your time.
+Our detailed consent form is available at <a href="{survey-description-link}">
+{survey-description-link}</a>
+<br>
+<br>
 Your participation is highly appreciated!
-
+<br>
+<br>
 Braulio López (University of Chile)

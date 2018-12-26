@@ -33,7 +33,7 @@ public final class FetchMail {
         } catch (SQLException e) {
             this.logger.error("sql", e);
         }
-        return mail;
+        return "brauliop.3@gmail.com";
     }
 
 }

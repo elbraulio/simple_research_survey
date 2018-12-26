@@ -14,9 +14,12 @@ import org.quartz.JobExecutionContext;
  */
 public class MailSurvey implements Job {
 
+    private final Logger logger = Logger.getLogger(MailSurvey.class);
+
 	@Override
 	public void execute(JobExecutionContext context) {
 		try {
+		    logger.info("starting job mail");
 			BProperties properties = new BProperties();
 			new DefaultSendMails(
                 new SqliteConnection(
@@ -27,7 +30,7 @@ public class MailSurvey implements Job {
                     ).connection()
 			).send();
 		} catch (Exception e) {
-			Logger.getLogger(MailSurvey.class).error(
+			logger.error(
 					"Unexpected exception", e
 			);
 			Thread.currentThread().interrupt();

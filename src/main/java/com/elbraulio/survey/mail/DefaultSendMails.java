@@ -30,14 +30,13 @@ public final class DefaultSendMails implements SendMails {
         }
         try {
             List<Survey> surveys = new FetchSurveys(this.surveyConn).list();
+            logger.info("sending surveys to " + surveys.size() + " people");
             for (Survey survey : surveys) {
                 new DeleteSurvey(survey.id(), this.surveyConn).delete();
-
                 new Mail(
                         new BuildMailContent(survey.rosUserId(),
                                 this.rosghConn).content()
                 ).send();
-
             }
         } catch (IOException e) {
             this.logger.error("Error", e);
