@@ -28,7 +28,7 @@ public final class BuildMailContent {
         }
         String content = sb.toString();
         content = content.replace("{survey-link}",
-                "http://survey.elbraulio.com/" + this.rosUserId);
+                "http://survey.elbraulio.com/survey?id=" + this.rosUserId);
         content = content.replace("{survey-description-link}", "http://survey" +
                 ".elbraulio.com");
         return new MailContent(
