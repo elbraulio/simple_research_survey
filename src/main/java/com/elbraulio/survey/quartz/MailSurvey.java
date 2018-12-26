@@ -4,20 +4,24 @@ import com.elbraulio.survey.mail.DefaultSendMails;
 import com.elbraulio.survey.utils.BProperties;
 import com.elbraulio.survey.utils.SqliteConnection;
 import org.apache.log4j.Logger;
-import org.quartz.Job;
-import org.quartz.JobExecutionContext;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.sql.Connection;
 
 /**
  * Scheduled Job
  */
-public class MailSurvey implements Job {
+public class MailSurvey extends HttpServlet {
 
     private final Logger logger = Logger.getLogger(MailSurvey.class);
 
     @Override
-    public void execute(JobExecutionContext context) {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         BProperties properties = new BProperties();
         try (Connection survey = new SqliteConnection(
                 properties.prop("sqlite.path")
@@ -37,5 +41,6 @@ public class MailSurvey implements Job {
             );
             Thread.currentThread().interrupt();
         }
+        req.getRequestDispatcher("home.jsp").forward(req, resp);
     }
 }

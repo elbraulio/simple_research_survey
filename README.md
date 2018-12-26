@@ -49,7 +49,7 @@ then deploy the `war` in your server. For instance if you are using [Tomcat](htt
 
 # How it works
 
-There is a __job__ that run every 5 minutes. It checks if exist a survey request to send a mail survey. The only thing you have to do to make a survey is to follow 3 steps.
+The only thing you have to do to make a survey is to follow 3 steps.
 
 ## create a survey
 
@@ -57,7 +57,7 @@ There is a __job__ that run every 5 minutes. It checks if exist a survey request
 
 2. Add the __ros_user_id__ (from the db included in resources) to the __survey__ table. When the mail is sent this record is removed. 
 
-3. Wait to the __job__ to take your survey (job runs every 5 minutes remenber).
+3. Go to `{host}/sendmail` and all mails will be sent.
 
 ## check results
 

@@ -4,14 +4,12 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
-        <display-name>QuartzScheduler</display-name>
         <servlet-name>QuartzScheduler</servlet-name>
-        <servlet-class>com.elbraulio.survey.quartz.JobScheduler</servlet-class>
-        <load-on-startup>1</load-on-startup>
+        <servlet-class>com.elbraulio.survey.quartz.MailSurvey</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>QuartzScheduler</servlet-name>
-        <url-pattern>/jobmail</url-pattern>
+        <url-pattern>/sendmail</url-pattern>
     </servlet-mapping>
 
     <servlet>
