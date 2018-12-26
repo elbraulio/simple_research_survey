@@ -22,7 +22,7 @@ public final class FetchQuestions {
 
     public List<Question> list() throws SQLException {
         String sql = "select * from aspirant where ros_user_id=" + rosUserId+
-                ";";
+                " and aspirant.id not in (select aspirant_id from answers);";
         List<Aspirant> aspirants = new LinkedList<>();
         try(ResultSet rs = survey.createStatement().executeQuery(sql)){
             while(rs.next()){
@@ -36,7 +36,7 @@ public final class FetchQuestions {
         }
         List<Question> questions = new LinkedList<>();
         for(Aspirant aspirant : aspirants){
-            String content = "select title, summary, url form ros_question " +
+            String content = "select title, summary, url from ros_question " +
                     "where " +
                     "id=" + aspirant.ros_question_id + ";";
             try(ResultSet rs = rosgh.createStatement().executeQuery(content)){
@@ -46,7 +46,8 @@ public final class FetchQuestions {
                                     aspirant.id,
                                     rs.getString("summary"),
                                     rs.getString("url"),
-                                    rs.getString("title")
+                                    rs.getString("title"),
+                                    aspirant.ros_user_id + ""
                             )
                     );
                 }

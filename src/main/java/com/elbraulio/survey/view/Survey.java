@@ -1,9 +1,6 @@
 package com.elbraulio.survey.view;
 
-import com.elbraulio.survey.utils.BProperties;
-import com.elbraulio.survey.utils.FetchQuestions;
-import com.elbraulio.survey.utils.Question;
-import com.elbraulio.survey.utils.SqliteConnection;
+import com.elbraulio.survey.utils.*;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -32,16 +29,16 @@ public final class Survey extends HttpServlet {
         } else {
             logger.info("requesting survey for id " + rosUserId);
             BProperties properties = new BProperties();
-            try(Connection survey = new SqliteConnection(
+            try (Connection survey = new SqliteConnection(
                     properties.prop("sqlite.path")
             ).connection();
-                Connection rosgh = new SqliteConnection(
-                        properties.prop("rosgh.db.path")
-                ).connection() ){
+                 Connection rosgh = new SqliteConnection(
+                         properties.prop("rosgh.db.path")
+                 ).connection()) {
                 List<Question> questions = new FetchQuestions(
                         rosUserId, survey, rosgh
                 ).list();
-                if(questions.isEmpty()) {
+                if (questions.isEmpty()) {
                     req.getRequestDispatcher("home.jsp").forward(req, resp);
                     return;
                 } else {
@@ -49,9 +46,39 @@ public final class Survey extends HttpServlet {
                 }
                 req.getRequestDispatcher(VIEW_TEMPLATE_PATH).forward(req, resp);
             } catch (SQLException | ClassNotFoundException e) {
-              logger.error("sql", e);
+                logger.error("sql", e);
                 req.getRequestDispatcher("home.jsp").forward(req, resp);
             }
+        }
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        String q1 = request.getParameter("q1");
+        String q2 = request.getParameter("q2");
+        String q3 = request.getParameter("q3");
+        String feedback = request.getParameter("feedback");
+        String aspirantId = request.getParameter("aspirant-id");
+        String rosuserId = request.getParameter("rosuser-id");
+        logger.info(
+                "aspirantId:" + aspirantId + "\n" +
+                        "rosuserId:" + rosuserId + "\n" +
+                        "q1:" + q1 + "\n" +
+                        "q2:" + q2 + "\n" +
+                        "q3:" + q3 + "\n" +
+                        "feedback:" + feedback + "\n"
+        );
+        BProperties properties = new BProperties();
+        try (Connection survey = new SqliteConnection(
+                properties.prop("sqlite.path")
+        ).connection()) {
+            new SaveAnswer(
+                    q1, q2, q3, feedback, aspirantId, survey
+            ).save();
+            response.sendRedirect("/survey?id=" + rosuserId);
+        } catch (SQLException | ClassNotFoundException e) {
+            logger.error("sql", e);
+            request.getRequestDispatcher("home.jsp").forward(request, response);
         }
     }
 }

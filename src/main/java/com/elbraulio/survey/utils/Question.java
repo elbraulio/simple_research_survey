@@ -8,13 +8,15 @@ public final class Question {
     private final String summary;
     private final String url;
     private final String title;
+    private final String rosUserId;
 
-    public Question(int aspirantId, String summary, String url, String title) {
+    public Question(int aspirantId, String summary, String url, String title, String rosUserId) {
 
         this.aspirantId = aspirantId;
         this.summary = summary;
         this.url = url;
         this.title = title;
+        this.rosUserId = rosUserId;
     }
 
     public int getAspirantId() {
@@ -31,5 +33,9 @@ public final class Question {
 
     public String getTitle() {
         return title;
+    }
+
+    public String getRosUserId() {
+        return rosUserId;
     }
 }
