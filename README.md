@@ -6,7 +6,7 @@
 
 ## config sqlite db
 
-The repo includes a [model]() to create the db where the results will be saved and the survey request must be added. You can create a empty __survey.db__.
+The repo includes a [model](https://github.com/elbraulio/simple_research_survey/blob/master/src/main/resources/model) to create the db where the results will be saved and the survey request must be added. You can create a empty __survey.db__.
 
 ```bash
 $ sqlite3 survey.db
