@@ -7,33 +7,35 @@ import org.apache.log4j.Logger;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 
+import java.sql.Connection;
+
 /**
- * 
  * Scheduled Job
- *
  */
 public class MailSurvey implements Job {
 
     private final Logger logger = Logger.getLogger(MailSurvey.class);
 
-	@Override
-	public void execute(JobExecutionContext context) {
-		try {
-		    logger.info("starting job mail");
-			BProperties properties = new BProperties();
-			new DefaultSendMails(
-                new SqliteConnection(
-                        properties.prop("sqlite.path")
-                ).connection(),
-                    new SqliteConnection(
-                            properties.prop("rosgh.db.path")
-                    ).connection()
-			).send();
-		} catch (Exception e) {
-			logger.error(
-					"Unexpected exception", e
-			);
-			Thread.currentThread().interrupt();
-		}
-	}
+    @Override
+    public void execute(JobExecutionContext context) {
+        BProperties properties = new BProperties();
+        try (Connection survey = new SqliteConnection(
+                properties.prop("sqlite.path")
+        ).connection();
+             Connection rosgh = new SqliteConnection(
+                     properties.prop("rosgh.db.path")
+             ).connection()
+        ) {
+            logger.info("starting job mail");
+            new DefaultSendMails(
+                    survey,
+                    rosgh
+            ).send();
+        } catch (Exception e) {
+            logger.error(
+                    "Unexpected exception", e
+            );
+            Thread.currentThread().interrupt();
+        }
+    }
 }

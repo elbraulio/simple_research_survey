@@ -19,6 +19,11 @@
         <servlet-class>com.elbraulio.survey.view.Home</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>survey</servlet-name>
+        <servlet-class>com.elbraulio.survey.view.Survey</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>home</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -26,5 +31,10 @@
     <servlet-mapping>
         <servlet-name>home</servlet-name>
         <url-pattern></url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>survey</servlet-name>
+        <url-pattern>/survey</url-pattern>
     </servlet-mapping>
 </web-app>
