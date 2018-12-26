@@ -18,9 +18,6 @@ sqlite> .read {PATH_MODEL}/model
 in the `resources` folder you can customize this configurations:
 
 ```properties
-# job schedule to check new survey request
-job.schedule=  0 0/5 0 ? * * *
-
 # path to the sqlite db that has the information for survey
 sqlite.path=
 
@@ -28,7 +25,7 @@ sqlite.path=
 rosgh.db.path=
 
 # mail configuration
-user=noreply.rosgh.survey@gmail.com
+user=rosgh.survey.notreply@gmail.com
 pass=...
 smtp.ssl.trust=*
 smtp.host=smtp.gmail.com
