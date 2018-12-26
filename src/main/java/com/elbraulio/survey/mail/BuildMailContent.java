@@ -1,6 +1,7 @@
 package com.elbraulio.survey.mail;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 
 /**
@@ -20,7 +21,9 @@ public final class BuildMailContent {
         InputStream stream = this.getClass().getClassLoader()
                 .getResourceAsStream("mail_description");
         StringBuilder sb = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new InputStreamReader(stream))) {
+        try (BufferedReader br =
+                     new BufferedReader(new InputStreamReader(stream,
+                             StandardCharsets.UTF_8))) {
             String line;
             while ((line = br.readLine()) != null) {
                 sb.append(line);
