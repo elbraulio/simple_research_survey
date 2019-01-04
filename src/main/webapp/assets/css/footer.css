@@ -2,7 +2,7 @@
     background: aliceblue;
     border: 1px solid midnightblue;
     width: 100%;
-    position: relative;
+    position: fixed;
     bottom: 0;
     left: 0;
 }
