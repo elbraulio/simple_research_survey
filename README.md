@@ -44,6 +44,8 @@ $ mvn package
 
 then deploy the `war` in your server. For instance if you are using [Tomcat](https://tomcat.apache.org) you can do it by leaving the war in your tomcat's `webapp` folder.
 
+Alternatively you can use [ghcd](https://github.com/elbraulio/ghcd). This is a script to easily deploy a war on Tomcat or Wildly servers.
+
 # How it works
 
 The only thing you have to do to make a survey is to follow 3 steps.
