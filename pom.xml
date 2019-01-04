@@ -57,5 +57,11 @@
             <artifactId>javax.mail</artifactId>
             <version>1.5.5</version>
         </dependency>
+        <!-- for server jsp implementation -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.7.25</version>
+        </dependency>
     </dependencies>
 </project>
