@@ -8,16 +8,16 @@ import java.sql.Connection;
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
 public final class BuildMailContent {
-    private final int rosUserId;
+    private final int ghUserId;
     private final Connection rosghConn;
 
-    public BuildMailContent(int rosUserId, Connection rosghConn) {
-        this.rosUserId = rosUserId;
+    public BuildMailContent(int ghUserId, Connection rosghConn) {
+        this.ghUserId = ghUserId;
         this.rosghConn = rosghConn;
     }
 
     public MailContent content() throws IOException {
-        String mail = new FetchMail(this.rosUserId, this.rosghConn).mail();
+        String mail = new FetchMail(this.ghUserId, this.rosghConn).mail();
         InputStream stream = this.getClass().getClassLoader()
                 .getResourceAsStream("mail_description");
         StringBuilder sb = new StringBuilder();
@@ -31,7 +31,7 @@ public final class BuildMailContent {
         }
         String content = sb.toString();
         content = content.replace("{survey-link}",
-                "http://survey.elbraulio.com/survey?id=" + this.rosUserId);
+                "http://survey.elbraulio.com/survey?id=" + this.ghUserId);
         content = content.replace("{survey-description-link}", "http://survey" +
                 ".elbraulio.com");
         return new MailContent(

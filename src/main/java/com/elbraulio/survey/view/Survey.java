@@ -22,12 +22,12 @@ public final class Survey extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String rosUserId = req.getParameter("id");
-        if (rosUserId == null) {
+        String ghUserId = req.getParameter("id");
+        if (ghUserId == null) {
             logger.info("no id supplied");
             req.getRequestDispatcher("home.jsp").forward(req, resp);
         } else {
-            logger.info("requesting survey for id " + rosUserId);
+            logger.info("requesting survey for id " + ghUserId);
             BProperties properties = new BProperties();
             try (Connection survey = new SqliteConnection(
                     properties.prop("sqlite.path")
@@ -36,7 +36,7 @@ public final class Survey extends HttpServlet {
                          properties.prop("rosgh.db.path")
                  ).connection()) {
                 List<Question> questions = new FetchQuestions(
-                        rosUserId, survey, rosgh
+                        ghUserId, survey, rosgh
                 ).list();
                 if (questions.isEmpty()) {
                     req.getRequestDispatcher("home.jsp").forward(req, resp);
@@ -59,10 +59,10 @@ public final class Survey extends HttpServlet {
         String q3 = request.getParameter("q3");
         String feedback = request.getParameter("feedback");
         String aspirantId = request.getParameter("aspirant-id");
-        String rosuserId = request.getParameter("rosuser-id");
+        String ghUserId = request.getParameter("rosuser-id");
         logger.info(
                 "aspirantId:" + aspirantId + "\n" +
-                        "rosuserId:" + rosuserId + "\n" +
+                        "ghUserId:" + ghUserId + "\n" +
                         "q1:" + q1 + "\n" +
                         "q2:" + q2 + "\n" +
                         "q3:" + q3 + "\n" +
@@ -75,7 +75,7 @@ public final class Survey extends HttpServlet {
             new SaveAnswer(
                     q1, q2, q3, feedback, aspirantId, survey
             ).save();
-            response.sendRedirect("/survey?id=" + rosuserId);
+            response.sendRedirect("/survey?id=" + ghUserId);
         } catch (SQLException | ClassNotFoundException e) {
             logger.error("sql", e);
             request.getRequestDispatcher("home.jsp").forward(request, response);

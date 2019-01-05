@@ -26,7 +26,7 @@ public final class FetchSurveys {
             while (rs.next()){
                 surveys.add(new Survey(
                         rs.getInt("id"),
-                        rs.getInt("ros_user_id")
+                        rs.getInt("gh_user_id")
                 ));
             }
         } catch (SQLException e) {
