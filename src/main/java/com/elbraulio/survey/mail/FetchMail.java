@@ -24,10 +24,12 @@ public final class FetchMail {
                 "from gh_user gu " +
                 "       where gu.id="
                 + this.ghUserId + ";";
-        String mail = null;
+        String mail = "";
         try (ResultSet rs = rosghConn.createStatement().executeQuery(sql)) {
             if(rs.next()){
                 mail = rs.getString("email");
+            } else {
+                logger.info("mail not found for gh_user_id " + ghUserId);
             }
         } catch (SQLException e) {
             this.logger.error("sql", e);

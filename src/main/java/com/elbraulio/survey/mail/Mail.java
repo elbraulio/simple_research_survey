@@ -24,6 +24,9 @@ public final class Mail {
     }
 
     public void send() {
+        if(content.to().trim().isEmpty()) {
+            return;
+        }
         try {
             logger.info("sending mail to " + content.to());
             BProperties bProps = new BProperties();
