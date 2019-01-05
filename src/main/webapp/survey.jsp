@@ -28,7 +28,7 @@
     <p class="center">(*) : answer required</p>
     <form action="survey" method="POST">
         <input name="aspirant-id" value="<%=question.getAspirantId()%>" hidden>
-        <input name="rosuser-id" value="<%=question.getRosUserId()%>" hidden>
+        <input name="ghuser-id" value="<%=question.getGhUserId()%>" hidden>
         <div class="question">
             <p>Given the topic and question above. Do you have knowledge about
                 the content of the question? <strong>(*)</strong></p>

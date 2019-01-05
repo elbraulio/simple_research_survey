@@ -59,7 +59,7 @@ public final class Survey extends HttpServlet {
         String q3 = request.getParameter("q3");
         String feedback = request.getParameter("feedback");
         String aspirantId = request.getParameter("aspirant-id");
-        String ghUserId = request.getParameter("rosuser-id");
+        String ghUserId = request.getParameter("ghuser-id");
         logger.info(
                 "aspirantId:" + aspirantId + "\n" +
                         "ghUserId:" + ghUserId + "\n" +
