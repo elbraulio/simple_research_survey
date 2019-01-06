@@ -6,7 +6,9 @@ CREATE TABLE IF NOT EXISTS aspirant (
 
 CREATE TABLE IF NOT EXISTS survey (
     id integer PRIMARY KEY,
-    gh_user_id integer NOT NULL
+    gh_user_id integer NOT NULL,
+    FOREIGN KEY (gh_user_id) REFERENCES aspirant (gh_user_id)
+    ON DELETE CASCADE ON UPDATE NO ACTION
 );
 
 CREATE TABLE IF NOT EXISTS answers (
