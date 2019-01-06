@@ -52,9 +52,9 @@ The only thing you have to do to make a survey is to follow 3 steps.
 
 ## create a survey
 
-1. Add all the aspirants to every ROS question  you have got from your Algorithm to __Aspirant__ table. Including `ros_user_id` and `ros_question_id` (from the db included in resources).
+1. Add all the aspirants to every ROS question  you have got from your Algorithm to __Aspirant__ table. Including `gh_user_id` and `ros_question_id` (from the db included in resources).
 
-2. Add the __ros_user_id__ (from the db included in resources) to the __survey__ table. When the mail is sent this record is removed. 
+2. Add the __gh_user_id__ (from the db included in resources) to the __survey__ table. When the mail is sent this record is removed. 
 
 3. Go to `{host}/sendmail` and all mails will be sent.
 
